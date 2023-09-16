@@ -18,6 +18,7 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
+	//ここからDB情報（ご自分の環境に合わせて変更してください）
 	connInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		os.Getenv("DB_HOST"),
 		os.Getenv("DB_PORT"),
@@ -26,6 +27,7 @@ func main() {
 		os.Getenv("DB_NAME"))
 
 	dbx, err := sqlx.Connect("postgres", connInfo)
+	//ここまで
 
 	router := gin.Default()
 	router.LoadHTMLGlob("assets/views/*.html")
