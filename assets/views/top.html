@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{.title}}</title>
+        <link rel="stylesheet" href="/assets/css/top.css">
+    </head>
+    <body>
+        <h1>TODOリスト</h1>
+        <div class="todolist-table-wrapper">
+            {{if .todoLists}}
+            <table class="todolist-table" border="1">
+                <thead>
+                    <tr>
+                        <th>
+                            作成日
+                        </th>
+                        <th>
+                            タイトル
+                        </th>
+                        <th>
+                            詳細
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center;">
+                    {{range .todoLists}}
+                    <tr>
+                        <td style="width:20%;">
+                            {{.CreateTime}}
+                        </td>
+                        <td style="width:20%;">
+                            {{.Title}}
+                        </td>
+                        <td style="width:50%;">
+                            {{.Descriptions}}
+                        </td>
+                        <td style="width:10%">
+                            <!-- TODO:削除機能の実装 -->
+                            <button>削除</button>
+                        </td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+            {{else}}
+            <span>
+                現在タスクはありません。
+            </span>
+            {{end}}
+        </div>
+    </body>
+</html>

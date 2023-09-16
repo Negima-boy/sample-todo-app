@@ -1,0 +1,2 @@
+INSERT INTO TodoList(title,descriptions,create_at) VALUES ('買い物','今日の夕飯の具材を買う','2023-09-16 12:00:00.000');
+INSERT INTO TodoList(title,descriptions,create_at) VALUES ('資格勉強','SAAの過去問解く','2023-09-16 12:30:00.000');
